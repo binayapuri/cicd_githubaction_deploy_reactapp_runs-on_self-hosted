@@ -27,5 +27,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build 
-    - run : ls
+    
+    - name: Deploy to hosting site
+      run: scp -r build/* ubuntu@52.205.255.187:var/www/html
 
